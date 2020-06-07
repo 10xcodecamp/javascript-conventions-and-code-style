@@ -2,6 +2,8 @@
 
 These are the conventions we teach at [PunchCode](https://punchcode.org/).
 
+Some code snippets below are marked `YES` or `NO` — these are answering the question: _**Does this piece of code fall in line with the conventions we teach at PunchCode?**_ The right answer to how you should write code is ultimately how your company writes code. The consensus from members in our community is that if you write code the way we illustrate below, you should be accepted into and able to adapt to any workplace.
+
 We use the default configurations of Prettier and ESLint (from create-react-app), except we add the following to our `.prettierrc` file:
 
 ```js
@@ -31,13 +33,13 @@ You can realistically use `const` for every variable until you try to do somethi
 If your function has a name, use function declarations like this:
 
 ```javascript
-function getBlogPostsByUser(userId) { } // GOOD
+function getBlogPostsByUser(userId) { } // YES
 ```
 
 Not like this:
 
 ```javascript
-const getBlogPostsByUser = (userId) => { } // BAD
+const getBlogPostsByUser = (userId) => { } // NO
 ```
 
 The function declaration above is shorter. But more importantly, it uses JavaScript's [function hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting) language feature. The ES6 (arrow) function is not hoisted and must be declared before using it elsewhere in the code and is therefore more fragile—in this case, dependent on being in a certain position in the code in order to work. (A common beginner bug is declaring a `const` after the function is called earlier in the code—something that works with function declarations.)
@@ -45,7 +47,7 @@ The function declaration above is shorter. But more importantly, it uses JavaScr
 Only use ES6 function syntax when used as an anonymous function. The following (the anonymous function inside of the filter method):
 
 ```javascript
-const filteredPasswords = passwords.filter((password) => { // GOOD
+const filteredPasswords = passwords.filter((password) => { // YES
    // do stuff here
 })
 ```
@@ -53,7 +55,7 @@ const filteredPasswords = passwords.filter((password) => { // GOOD
 Is preferable to this:
 
 ```javascript
-const filteredPasswords = passwords.filter(function(password) { // BAD
+const filteredPasswords = passwords.filter(function(password) { // NO
    // do stuff here
 })
 ```
@@ -78,12 +80,12 @@ Consider these data types:
 
 ## Strings and Objects
 
-Name the variable something meaningful and unique. What are you storing in this variable? Try to reflect things that exist in the real world or would make sense to a layperson. Never write a single-letter variable or abbreviation. (Exceptions at the bottom.) Never write a variable that anyone would have the slightest difficulty interpreting—including you 6 months from now.
+Name the variable something meaningful, narrow, and unique. What are you storing in this variable? Be specific. Try to reflect things that exist in the real world or would make sense to a layperson. Never write a single-letter variable or abbreviation. (Exceptions at the bottom.) Never write a variable that anyone would have the slightest difficulty interpreting—including you 6 months from now.
 
 ```javascript
 const firstName = "Mike"
 const user = {
-   id: "16672b8b-6946-4016-b7b8-f450b911f69e"
+   id: "16672b8b-6946-4016-b7b8-f450b911f69e",
    email: "test@gmail.com",
    password: "74ABC516649DFF36BE66F8D3D1AAB621022B6A4A",      
 }
@@ -161,14 +163,14 @@ const userFirstNames = users.map((user) => {
 })
 ```
 
-## Dates
+## Timestamps
 
-When storing a JavaScript Date object or any date represented by a number or string, you can name it with the `On` suffix. The fact that this convention can be used on multiple data types is okay. It is primarily a convention to help you understand what it is you are working with.
+When storing a JavaScript Date object or any date and time (often called a "timestamp") represented by a number or string, you can name it with the `At` suffix. The fact that this convention can be used on multiple data types is okay. It is primarily a convention to help you understand what it is you are working with.
 
 ```javascript
-createdOn: 1591425642
-updatedOn: "Fri Jun 05 2020 23:43:22 GMT-0700 (Pacific Daylight Time)"
-nextEventOn: 202007101200
+createdAt: 1591425642
+updatedAt: "Fri Jun 05 2020 23:43:22 GMT-0700 (Pacific Daylight Time)"
+nextEventAt: 202007101200
 ```
 
 ## Function names
@@ -221,12 +223,12 @@ function checkHasAdminStatus(user) { return }
 function checkCanEdit(pageMode) { return }
 ```
 
-### Functions that return a date
+### Functions that return a timestamp
 
-Use the same `On` suffix convention we use in variable names.
+Use the same `At` suffix convention we use in variable names.
 
 ```js
-function getCreatedOn(blogPost) { }
+function getCreatedAt(blogPost) { }
 ```
 
 ### More function conventions
@@ -277,15 +279,15 @@ You should try to name variables with a meaningful and unique name that reflects
 Avoid including these abbreviations on otherwise understandable variable names. For example:
 
 ```javascript
-const nameStr = "Mike" // BAD
-const name = "Mike" // GOOD
+const nameStr = "Mike" // NO
+const name = "Mike" // YES
 
-const userObj = {} // BAD
-const user = {} // GOOD
+const userObj = {} // NO
+const user = {} // YES
 
-const totalNum = 6 // BAD
-const totalBlogPosts = 6 // GOOD
-const numOfBlogPosts = 6 // GOOD
+const totalNum = 6 // NO
+const totalBlogPosts = 6 // YES
+const numOfBlogPosts = 6 // YES
 ```
 ## Id vs ID, Json vs JSON, and other acronyms
 
@@ -294,25 +296,25 @@ This is the most hotly contested style decision. It also matters least. Below we
 Here is the right way:
 
 ```javascript
-const userId = "a575d85c-3907-4467-9512-b63d2dec8b20" // GOOD
-function toSafelyParsedJson(str) { } // GOOD
-function getHtml(file) { } // GOOD
+const userId = "a575d85c-3907-4467-9512-b63d2dec8b20" // YES
+function toSafelyParsedJson(str) { } // YES
+function getHtml(file) { } // YES
 ```
 
 And the wrong way:
 
 ```javascript
-const userID = "a575d85c-3907-4467-9512-b63d2dec8b20" // BAD
-function toSafelyParsedJSON(str) { } // BAD
-function getHTML(file) { } // BAD
+const userID = "a575d85c-3907-4467-9512-b63d2dec8b20" // NO
+function toSafelyParsedJSON(str) { } // NO
+function getHTML(file) { } // NO
 ```
 Nerds [have battled](https://softwareengineering.stackexchange.com/questions/186277/should-the-variable-be-named-id-or-id) over this convention since the dawn of camelCase. We come down on the side of `Id` in JavaScript because a mistake many learners make is writing `document.getElementById()` as `document.getElementByID()` [which won't work](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById#Usage_notes).
 
 Also, [if two acronyms are ever next to each other](https://en.wikipedia.org/wiki/Camel_case#Programming_and_coding) in a variable name (for whatever ungodly reason), you have a more readable and less mistake-prone variable name.
 
 ```js
-function parseDBMXML(key) { } // BAD
-function parseDbmXml(key) { } // GOOD
+function parseDBMXML(key) { } // NO
+function parseDbmXml(key) { } // YES
 ```
 
 We use this pattern for all acronyms to reinforce consistency.
@@ -351,12 +353,12 @@ const SERVER_URL: "https//api.developers.vegas"
 These conventions were written with the help of [Las Vegas Developers](https://www.developers.vegas/) and the following resources:
 
 - [The art of naming variables](https://hackernoon.com/the-art-of-naming-variables-52f44de00aad)
-- [Good Variable Names](https://wiki.c2.com/?GoodVariableNames)
+- [YES Variable Names](https://wiki.c2.com/?YESVariableNames)
 - [Naming your variables!](https://blog.usejournal.com/naming-your-variables-f9477ba002e9)
 - [How to name variables](https://stackoverflow.com/questions/203618/how-to-name-variables)
 
 ## Notes
-<sub>\* Yes, Array and Date are technically "constructed object instances" but it doesn't do anyone any good to know that. Rather, it's better to think of Array and Date as data types alongside the others.</sub>
+<sub>\* Yes, Array and Date are technically "constructed object instances" but it doesn't do anyone any YES to know that. Rather, it's better to think of Array and Date as data types alongside the others.</sub>
 
 <sub>Also, we can ignore `null` and `undefined` because we'll never/rarely create a variable to store only those values.</sub>
 
