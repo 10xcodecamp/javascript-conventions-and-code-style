@@ -80,7 +80,7 @@ Consider these data types:
 
 ## Strings and Objects
 
-Name the variable something meaningful, narrow, and unique. What are you storing in this variable? Be specific. Try to reflect things that exist in the real world or would make sense to a layperson. Never write a single-letter variable or abbreviation. (Exceptions at the bottom.) Never write a variable that anyone would have the slightest difficulty interpreting—including you 6 months from now.
+Name the variable something meaningful, narrow, and specific. What are you storing in this variable? Be specific. Try to reflect things that exist in the real world or would make sense to a layperson. Never write a single-letter variable or abbreviation. (Exceptions at the bottom.) Never write a variable that anyone would have the slightest difficulty interpreting—including you 6 months from now.
 
 ```javascript
 const firstName = "Mike"
@@ -114,7 +114,7 @@ const hasAdminStatus = true
 
 ## Arrays
 
-Give them a meaningful and unique name, but in plural form.
+Give them a meaningful and specific name, but in plural form.
 
 ```javascript
 const mostCommonPasswords = [
@@ -175,13 +175,21 @@ nextEventAt: 202007101200
 
 ## Function names
 
-As a general rule, function names should begin with a verb, followed by a noun. They should be meaningful and unique like variable names. 
+As a general rule, function names should begin with a verb, followed by a noun. They should be meaningful, narrow, and specific like variable names.
 
 ```js
 function resetTasks(date) { }
 ```
 
-But if the function is returning a data type of:
+If a function does multiple things it is okay to describe those things. It is better to have a long and specific name than a short and ambiguous one.
+
+From Elements of Clojure:
+
+>If a function takes an id and returns a binary payload, it should be called `getPayload`. If it takes an id and deletes the payload, it should be called `deletePayload`. If it takes an id, replaces the payload with a compressed version, and returns the result, it should be called `compressAndGetPayload`.
+
+If you find your function name is too long and is doing too many things, break it into smaller functions that can be reused.
+
+Functions that return the following data types:
 
  - String
  - Object
@@ -190,7 +198,7 @@ But if the function is returning a data type of:
  - Boolean
  - Date
 
-You can use the conventions above for variable names in function names as well.
+can use the conventions discussed earlier for variable names. Examples:
 
 ### Functions that return a string or object
 
@@ -265,10 +273,11 @@ for (let i = 0; i < users.length) {
 
 ## Abbreviations
 
-You should try to name variables with a meaningful and unique name that reflects what it is. But sometimes you will write utility functions that accept any string or any number, etc. and you can use the following abbreviations.
+You should try to name variables with a meaningful, narrow, and specific name that reflects what it is. But sometimes you will write utility functions that accept any string or any number, etc. and you can use the following abbreviations.
 
 `char` - a single character, pluralized: `chars`
 `str` - string, pluralized: `strings`
+`num` - number, pluralized: `nums`
 `obj` - object, pluralized: `objs`
 `arr` - array, pluralized: `arrs`
 `func` - function, pluralized: `funcs`
@@ -279,13 +288,13 @@ You should try to name variables with a meaningful and unique name that reflects
 Avoid including these abbreviations on otherwise understandable variable names. For example:
 
 ```javascript
-const nameStr = "Mike" // NO
-const name = "Mike" // YES
+const firstNameStr = "Mike" // NO
+const firstName = "Mike" // YES
 
 const userObj = {} // NO
 const user = {} // YES
 
-const totalNum = 6 // NO
+const totalBlogPostsNum = 6 // NO
 const totalBlogPosts = 6 // YES
 const numOfBlogPosts = 6 // YES
 ```
@@ -293,7 +302,7 @@ const numOfBlogPosts = 6 // YES
 
 This is the most hotly contested style decision. It also matters least. Below we illustrate how and why we use one over the other in JavaScript.
 
-Here is the right way:
+Here is the convention we use:
 
 ```javascript
 const userId = "a575d85c-3907-4467-9512-b63d2dec8b20" // YES
@@ -301,7 +310,7 @@ function toSafelyParsedJson(str) { } // YES
 function getHtml(file) { } // YES
 ```
 
-And the wrong way:
+We do not do this:
 
 ```javascript
 const userID = "a575d85c-3907-4467-9512-b63d2dec8b20" // NO
