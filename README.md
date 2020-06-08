@@ -165,7 +165,7 @@ const userFirstNames = users.map((user) => {
 
 ## Timestamps
 
-When storing a JavaScript Date object or any date and time (often called a "timestamp") represented by a number or string, you can name it with the `At` suffix. The fact that this convention can be used on multiple data types is okay. It is primarily a convention to help you understand what it is you are working with.
+When storing a JavaScript Date object or any date and time  represented by a number or string (often called a "timestamp"), you can name it with the `At` suffix. The fact that this convention can be used on multiple data types is okay. It is primarily a convention to help you understand what it is you are working with.
 
 ```javascript
 createdAt: 1591425642
@@ -275,15 +275,15 @@ for (let i = 0; i < users.length) {
 
 You should try to name variables with a meaningful, narrow, and specific name that reflects what it is. But sometimes you will write utility functions that accept any string or any number, etc. and you can use the following abbreviations.
 
-`char` - a single character, pluralized: `chars`
-`str` - string, pluralized: `strings`
-`num` - number, pluralized: `nums`
-`obj` - object, pluralized: `objs`
-`arr` - array, pluralized: `arrs`
-`func` - function, pluralized: `funcs`
-`bool` - boolean, pluralized: `bools`
-`i` - index in a for loop
-`e` - DOM event or [SyntheticEvent](https://reactjs.org/docs/events.html) wrapper in React
+- `char` - a single character, pluralized: `chars`
+- `str` - string, pluralized: `strings`
+- `num` - number, pluralized: `nums`
+- `obj` - object, pluralized: `objs`
+- `arr` - array, pluralized: `arrs`
+- `func` - function, pluralized: `funcs`
+- `bool` - boolean, pluralized: `bools`
+- `i` - index in a for loop
+- `e` - DOM event or [SyntheticEvent](https://reactjs.org/docs/events.html) wrapper in React
 
 Avoid including these abbreviations on otherwise understandable variable names. For example:
 
@@ -300,7 +300,7 @@ const numOfBlogPosts = 6 // YES
 ```
 ## Id vs ID, Json vs JSON, and other acronyms
 
-This is the most hotly contested style decision. It also matters least. Below we illustrate how and why we use one over the other in JavaScript.
+This is the most hotly contested style decision. It also matters least (because both are understandable). Below we illustrate how and why we use one over the other in JavaScript.
 
 Here is the convention we use:
 
@@ -330,7 +330,7 @@ We use this pattern for all acronyms to reinforce consistency.
 
 ## Beyond camelCase
 
-We write variable in camelCase in JavaScript except for when we are working with non-JavaScript web development technologies. Instead of camelCase, write these names in kebab-case. This includes HTML, CSS, SCSS, file names, folder names.
+We write variable in camelCase in JavaScript except for when we are working with non-JavaScript web development technologies. Instead of camelCase, write these names in kebab-case. This includes HTML, CSS, SCSS, file names, folder names, Github projects, etc.
 
 ```html
 <input id="login-email-input">
@@ -355,7 +355,7 @@ Development constants are variables that use the `const` syntax and are set by t
 
 ```javascript
 const SERVER_PORT: 3000
-const SERVER_URL: "https//api.developers.vegas"
+const SERVER_URL: "https://api.developers.vegas"
 ```
 ## References
 
