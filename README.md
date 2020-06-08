@@ -44,7 +44,7 @@ const getBlogPostsByUser = (userId) => { } // NO
 
 The function declaration above is shorter. But more importantly, it uses JavaScript's [function hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting) language feature. The ES6 (arrow) function is not hoisted and must be declared before using it elsewhere in the code and is therefore more fragile—in this case, dependent on being in a certain position in the code in order to work. (A common beginner bug is declaring a `const` after the function is called earlier in the code—something that works with function declarations.)
 
-Only use ES6 function syntax when used as an anonymous function. The following (the anonymous function inside of the filter method):
+Only use ES6 function syntax (once you've learned it) when used as an anonymous function. The following ES6 anonymous function inside of the filter method:
 
 ```javascript
 const filteredPasswords = passwords.filter((password) => { // YES
