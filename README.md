@@ -183,7 +183,7 @@ function resetTasks(date) { }
 
 If a function does multiple things it is okay to describe those things. It is better to have a long and specific name than a short and ambiguous one.
 
-From Elements of Clojure:
+From [Elements of Clojure](https://leanpub.com/elementsofclojure/read_sample):
 
 >If a function takes an id and returns a binary payload, it should be called `getPayload`. If it takes an id and deletes the payload, it should be called `deletePayload`. If it takes an id, replaces the payload with a compressed version, and returns the result, it should be called `compressAndGetPayload`.
 
