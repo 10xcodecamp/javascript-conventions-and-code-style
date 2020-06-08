@@ -330,7 +330,7 @@ We use this pattern for all acronyms to reinforce consistency.
 
 ## Beyond camelCase
 
-We write variable in camelCase in JavaScript except for when we are working with non-JavaScript web development technologies. Instead of camelCase, write these names in kebab-case. This includes HTML, CSS, SCSS, file names, folder names, Github projects, etc.
+We write variables in **camelCase** in JavaScript except for when we are working with non-JavaScript web development technologies. Instead of camelCase, write these names in **kebab-case**. This includes HTML, CSS, SCSS, file names, folder names, Github projects, etc.
 
 ```html
 <input id="login-email-input">
@@ -346,12 +346,12 @@ We write variable in camelCase in JavaScript except for when we are working with
 scrape-pages.js
 ```
 
-React components are written in PascalCase, a requirement of the React library.
+React components are written in **PascalCase**, a requirement of the React library.
 ```javascript
 import AppTemplate from "../uis/AppTemplate"
 ```
 
-Development constants are variables that use the `const` syntax and are set by the developer, and are not altered by the program during execution. They often hold "[magic numbers](https://www.quora.com/What-is-a-magic-number-in-programming)" or other hard-coded values. They are written in SCREAMING_SNAKE_CASE.
+Development constants are variables that use the `const` syntax and are set by the developer, and are not altered by the program during execution. They often hold "[magic numbers](https://www.quora.com/What-is-a-magic-number-in-programming)" or other hard-coded values. They are written in **SCREAMING_SNAKE_CASE**.
 
 ```javascript
 const SERVER_PORT: 3000
