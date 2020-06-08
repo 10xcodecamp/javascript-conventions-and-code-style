@@ -362,12 +362,12 @@ const SERVER_URL: "https//api.developers.vegas"
 These conventions were written with the help of [Las Vegas Developers](https://www.developers.vegas/) and the following resources:
 
 - [The art of naming variables](https://hackernoon.com/the-art-of-naming-variables-52f44de00aad)
-- [YES Variable Names](https://wiki.c2.com/?YESVariableNames)
+- [Good Variable Names](https://wiki.c2.com/?GoodVariableNames)
 - [Naming your variables!](https://blog.usejournal.com/naming-your-variables-f9477ba002e9)
 - [How to name variables](https://stackoverflow.com/questions/203618/how-to-name-variables)
 
 ## Notes
-<sub>\* Yes, Array and Date are technically "constructed object instances" but it doesn't do anyone any YES to know that. Rather, it's better to think of Array and Date as data types alongside the others.</sub>
+<sub>\* Yes, Array and Date are technically "constructed object instances" but it doesn't do anyone any good to know that. Rather, it's better to think of Array and Date as data types alongside the others.</sub>
 
 <sub>Also, we can ignore `null` and `undefined` because we'll never/rarely create a variable to store only those values.</sub>
 
