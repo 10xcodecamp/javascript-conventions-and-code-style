@@ -129,12 +129,12 @@ const mostCommonPasswords = [
 
 const users = [
    {
-      id: "16672b8b-6946-4016-b7b8-f450b911f69e"
+      id: "16672b8b-6946-4016-b7b8-f450b911f69e",
       email: "test@gmail.com",
       password: "74ABC516649DFF36BE66F8D3D1AAB621022B6A4A",      
    },
    {
-      id: "a575d85c-3907-4467-9512-b63d2dec8b20"
+      id: "a575d85c-3907-4467-9512-b63d2dec8b20",
       email: "example@yahoo.com",
       password: "4B2B79B6F371CA18F1216461CFFEADDF6848A50E",      
    },
