@@ -1,8 +1,8 @@
 # JavaScript Conventions and Code Style
 
-These are the conventions we teach at [PunchCode](https://punchcode.org/).
+These are the conventions we teach at [10x Code Camp](https://www.10xcodecamp.com/).
 
-Some code snippets below are marked `YES` or `NO` — these are answering the question: _**Does this piece of code fall in line with the conventions we teach at PunchCode?**_ The right answer to how you should write code is ultimately how your company writes code. The consensus from members in our community is that if you write code the way we illustrate below, you should be accepted into and able to adapt to any workplace.
+Some code snippets below are marked `YES` or `NO` — these are answering the question: _**Does this piece of code fall in line with the conventions we teach at 10x Code Camp?**_ The right answer to how you should write code is ultimately how your company writes code. The consensus from members in our community is that if you write code the way we illustrate below, you should be accepted into and able to adapt to any workplace.
 
 We use the default configurations of Prettier and ESLint (from create-react-app), except we add the following to our `.prettierrc` file:
 
